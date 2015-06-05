@@ -1,0 +1,10 @@
+<TextureAtlas imagePath="characters.png">
+	<SubTexture name="base.male1" x="0" y="0" width="16" height="16"/>
+	<SubTexture name="base.female1" x="17" y="0" width="16" height="16"/>
+	<SubTexture name="base.male2" x="0" y="17" width="16" height="16"/>
+	<SubTexture name="base.female2" x="17" y="17" width="16" height="16"/>
+	<SubTexture name="base.male3" x="0" y="34" width="16" height="16"/>
+	<SubTexture name="base.female3" x="17" y="34" width="16" height="16"/>
+	<SubTexture name="base.male4" x="0" y="51" width="16" height="16"/>
+	<SubTexture name="base.female4" x="17" y="51" width="16" height="16"/>
+</TextureAtlas>
