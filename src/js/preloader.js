@@ -18,6 +18,9 @@
     },
 
     loadResources: function () {
+      // load tiles
+      this.load.atlasXML('environment', 'assets/tiles/environment.png', 'assets/tiles/environment.xml');
+
       this.load.image('player', 'assets/player.png');
       this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
     },

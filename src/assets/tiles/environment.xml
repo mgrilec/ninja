@@ -1,0 +1,8 @@
+<TextureAtlas imagePath="environment.png">
+	<SubTexture name="grass.basic1" x="85" y="0" width="16" height="16"/>
+	<SubTexture name="grass.basic2" x="85" y="17" width="16" height="16"/>
+	<SubTexture name="dirt.basic1" x="102" y="0" width="16" height="16"/>
+	<SubTexture name="dirt.basic2" x="102" y="17" width="16" height="16"/>
+	<SubTexture name="stone.basic1" x="119" y="0" width="16" height="16"/>
+	<SubTexture name="stone.basic2" x="119" y="17" width="16" height="16"/>
+</TextureAtlas>
