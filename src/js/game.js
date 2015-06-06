@@ -2,22 +2,19 @@
   'use strict';
 
   function Game() {
-    this.player = null;
+    
   }
 
   Game.prototype = {
 
     create: function () {
+      var _this = this;
       this.player = this.add.existing(new beings.Human(this.game, "player", 0, 0));
-      this.input.onDown.add(this.onInputDown, this);
+      this.map = this.add.existing(new level.Map(this.game, 50, 50));
     },
 
     update: function () {
 
-    },
-
-    onInputDown: function () {
-      //this.game.state.start('menu');
     },
 
     render: function() {
