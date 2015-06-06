@@ -1,21 +1,28 @@
 var beings = beings || {}
 
 beings.Human = function(game, name, x, y) {
-	Phaser.Group.call(this, game, undefined, name);
+	Phaser.Sprite.call(this, game, x, y, 'characters', 'base.male.0');
 
-	this.x = x;
-	this.y = y;
-	this.width = 16;
-	this.height = 16;
+	this.parts = {}
 
-	// base
-	this.base = new Phaser.Sprite(game, x, y, 'characters', 'base.male1');
-	this.base.smoothed = false;
-	this.base.name = 'base';
-	this.add(this.base);
+	// bottoms
+	this.parts.bottoms = game.make.image(x, y, 'characters', 'bottoms.0');
+	this.addChild(this.parts.bottoms);
+
+	// shoes
+	this.parts.shoes = game.make.image(x, y, 'characters', 'shoes.0');
+	this.addChild(this.parts.shoes);
+
+	// top
+	this.parts.top = game.make.image(x, y, 'characters', 'top.0');
+	this.addChild(this.parts.top);
+
+	// hair
+	this.parts.hair = game.make.image(x, y, 'characters', 'hair.1');
+	this.addChild(this.parts.hair);
 }
 
-beings.Human.prototype = Object.create(Phaser.Group.prototype);
+beings.Human.prototype = Object.create(Phaser.Sprite.prototype);
 beings.Human.prototype.constructor = beings.Human;
 
 beings.Human.prototype.update = function() {

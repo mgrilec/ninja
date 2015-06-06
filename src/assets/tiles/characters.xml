@@ -1,10 +1,57 @@
 <TextureAtlas imagePath="characters.png">
-	<SubTexture name="base.male1" x="0" y="0" width="16" height="16"/>
-	<SubTexture name="base.female1" x="17" y="0" width="16" height="16"/>
-	<SubTexture name="base.male2" x="0" y="17" width="16" height="16"/>
-	<SubTexture name="base.female2" x="17" y="17" width="16" height="16"/>
-	<SubTexture name="base.male3" x="0" y="34" width="16" height="16"/>
-	<SubTexture name="base.female3" x="17" y="34" width="16" height="16"/>
-	<SubTexture name="base.male4" x="0" y="51" width="16" height="16"/>
-	<SubTexture name="base.female4" x="17" y="51" width="16" height="16"/>
+	<SubTexture name="base.male.0" x="0" y="0" width="16" height="16"/>
+	<SubTexture name="base.female.0" x="17" y="0" width="16" height="16"/>
+	<SubTexture name="base.male.1" x="0" y="17" width="16" height="16"/>
+	<SubTexture name="base.female.1" x="17" y="17" width="16" height="16"/>
+	<SubTexture name="base.male.2" x="0" y="34" width="16" height="16"/>
+	<SubTexture name="base.female.2" x="17" y="34" width="16" height="16"/>
+	<SubTexture name="base.male.3" x="0" y="51" width="16" height="16"/>
+	<SubTexture name="base.female.3" x="17" y="51" width="16" height="16"/>
+
+	<SubTexture name="bottoms.0" x="52" y="0" width="16" height="16"/>
+	<SubTexture name="bottoms.1" x="52" y="17" width="16" height="16"/>
+	<SubTexture name="bottoms.2" x="52" y="34" width="16" height="16"/>
+	<SubTexture name="bottoms.3" x="52" y="51" width="16" height="16"/>
+	<SubTexture name="bottoms.4" x="52" y="68" width="16" height="16"/>
+	<SubTexture name="bottoms.5" x="52" y="85" width="16" height="16"/>
+	<SubTexture name="bottoms.6" x="52" y="102" width="16" height="16"/>
+	<SubTexture name="bottoms.7" x="52" y="119" width="16" height="16"/>
+	<SubTexture name="bottoms.8" x="52" y="136" width="16" height="16"/>
+	<SubTexture name="bottoms.9" x="52" y="153" width="16" height="16"/>
+
+
+	<SubTexture name="shoes.0" x="69" y="0" width="16" height="16"/>
+	<SubTexture name="shoes.1" x="69" y="17" width="16" height="16"/>
+	<SubTexture name="shoes.2" x="69" y="34" width="16" height="16"/>
+	<SubTexture name="shoes.3" x="69" y="51" width="16" height="16"/>
+	<SubTexture name="shoes.4" x="69" y="68" width="16" height="16"/>
+	<SubTexture name="shoes.5" x="69" y="85" width="16" height="16"/>
+	<SubTexture name="shoes.6" x="69" y="102" width="16" height="16"/>
+	<SubTexture name="shoes.7" x="69" y="119" width="16" height="16"/>
+	<SubTexture name="shoes.8" x="69" y="136" width="16" height="16"/>
+	<SubTexture name="shoes.9" x="69" y="153" width="16" height="16"/>
+
+
+	<SubTexture name="top.0" x="103" y="0" width="16" height="16"/>
+	<SubTexture name="top.1" x="120" y="0" width="16" height="16"/>
+	<SubTexture name="top.2" x="137" y="0" width="16" height="16"/>
+	<SubTexture name="top.3" x="154" y="0" width="16" height="16"/>
+	<SubTexture name="top.4" x="171" y="0" width="16" height="16"/>
+	<SubTexture name="top.5" x="188" y="0" width="16" height="16"/>
+	<SubTexture name="top.6" x="205" y="0" width="16" height="16"/>
+	<SubTexture name="top.7" x="222" y="0" width="16" height="16"/>
+	<SubTexture name="top.8" x="240" y="0" width="16" height="16"/>
+	<SubTexture name="top.9" x="256" y="0" width="16" height="16"/>
+	<SubTexture name="top.10" x="273" y="0" width="16" height="16"/>
+	<SubTexture name="top.11" x="290" y="0" width="16" height="16"/>
+
+	<SubTexture name="hair.0" x="324" y="0" width="16" height="16"/>
+	<SubTexture name="hair.1" x="341" y="0" width="16" height="16"/>
+	<SubTexture name="hair.2" x="358" y="0" width="16" height="16"/>
+	<SubTexture name="hair.3" x="375" y="0" width="16" height="16"/>
+	<SubTexture name="hair.4" x="392" y="0" width="16" height="16"/>
+	<SubTexture name="hair.5" x="409" y="0" width="16" height="16"/>
+	<SubTexture name="hair.6" x="426" y="0" width="16" height="16"/>
+	<SubTexture name="hair.7" x="443" y="0" width="16" height="16"/>
+
 </TextureAtlas>
