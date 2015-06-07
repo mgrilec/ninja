@@ -10,7 +10,7 @@
     create: function () {
       var _this = this;
       this.player = this.add.existing(new beings.Human(this.game, "player", 0, 0));
-      this.map = this.add.existing(new level.Map(this.game, 50, 50));
+      this.map = this.add.existing(new level.Map(this.game, "maps.camp"));
     },
 
     update: function () {

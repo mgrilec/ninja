@@ -1,30 +1,24 @@
 var level = level || {};
 
-level.Map = function(game, width, height) {
+level.Map = function(game, key) {
 	var _this = this;
 
 	Phaser.Group.call(this, game);
 
-	this.mapWidth = width;
-	this.mapHeight = height;
-	this.map = {};
+	this.map = game.add.tilemap(key);
 
-	this.generator = new ROT.Map.DividedMaze(width, height);
-	this.generator.create(function(x, y, value) {
-		_this.map[y * _this.mapWidth + x] = value;
-	});
+	// load tileset images
+	_.each(this.map.tilesets, function(t) {
+		this.map.addTilesetImage(t.name, t.name);
+	}, this);
 
-	for (var i in this.map) {
-		var value = this.map[i];
-		var x = i % this.mapWidth;
-		var y = Math.floor(i / this.mapWidth);
+	// create layers
+	_.each(this.map.layers, function(l) {
+		this.map.createLayer(l.name);
+	}, this);
 
-		if (value == 0) {
-			this.add(game.make.image(x * 16, y * 16, "environment", "ground.dirt.0"));
-		} else {
-			this.add(game.make.image(x * 16, y * 16, "environment", "wall.sand.0"));
-		}
-	}
+	//console.log(this.map);
+	//game.add.existing(this.map);
 };
 
 level.Map.prototype = Object.create(Phaser.Group.prototype);

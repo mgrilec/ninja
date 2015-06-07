@@ -20,8 +20,11 @@
     loadResources: function () {
 
       // load tiles
-      this.load.atlasXML('environment', 'assets/tiles/environment.png', 'assets/tiles/environment.xml');
+      this.load.image('environment', 'assets/tiles/environment.png');
       this.load.atlasXML('characters', 'assets/tiles/characters.png', 'assets/tiles/characters.xml');
+
+      // load maps
+      this.load.tilemap('maps.camp', 'assets/maps/camp.json', null, Phaser.Tilemap.TILED_JSON);
 
       this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
     },
