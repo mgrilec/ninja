@@ -10,13 +10,24 @@
     create: function () {
       var _this = this;
 
-      // setup camera
-      this.game.camera.scale.set(2, 2);
+      // globals
+      this.game.tileSize = 16;
 
-      this.player = this.add.existing(new beings.Human(this.game, "player", 0, 0));
+      // create engine
+      this.game.scheduler = new ROT.Scheduler.Simple();
+      this.game.engine = new ROT.Engine(this.game.scheduler);
+
+      // create map
       this.map = this.add.existing(new level.Map(this.game, "maps.camp"));
 
-      console.log(this.game.camera);
+      // create player and add to scheduler
+      this.player = this.add.existing(new beings.Human(this.game, "player", 0, 0));
+      this.game.scheduler.add(this.player, true);
+
+      // start engine
+      this.game.engine.start();
+
+      console.log(this);
     },
 
     update: function () {
