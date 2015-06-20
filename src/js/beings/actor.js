@@ -1,6 +1,6 @@
 var beings = beings || {};
 
-beings.Human = function(game, name, x, y) {
+beings.Actor = function(game, name, x, y, control) {
 	Phaser.Sprite.call(this, game, x * game.tileSize, y * game.tileSize, 'characters', 'base.male.0');
 
 	this.tx = x;
@@ -24,41 +24,43 @@ beings.Human = function(game, name, x, y) {
 	this.addChild(this.parts.hair);
 
 	// control
-	this.cursors = game.input.keyboard.createCursorKeys();
-	this.acting = true;
+	this.control = new control(this);
+	console.log(this);
 };
 
-beings.Human.prototype = Object.create(Phaser.Sprite.prototype);
-beings.Human.prototype.constructor = beings.Human;
+beings.Actor.prototype = Object.create(Phaser.Sprite.prototype);
+beings.Actor.prototype.constructor = beings.Actor;
 
-beings.Human.prototype.update = function() {
+beings.Actor.prototype.update = function() {
 	var _this = this;
 
 	this.x = this.tx * this.game.tileSize;
 	this.y = this.ty * this.game.tileSize;
-	//console.log(this.game.tileSize);
 
-	if (this.acting) {
-		if (this.cursors.left.justDown) {
-			this.tx--;
-			this.game.engine.unlock();
-		}
-		else if (this.cursors.right.justDown) {
-			this.tx++;
-			this.game.engine.unlock();
-		}
-		else if (this.cursors.up.justDown) {
-			this.ty--
-			this.game.engine.unlock();
-		}
-		else if (this.cursors.down.justDown) {
-			this.ty++;
-			this.game.engine.unlock();
-		}
-	}
+	this.control.update();
 };
 
-beings.Human.prototype.act = function() {
+beings.Actor.prototype.act = function() {
 	var _this = this;
+	this.acting = true;
 	this.game.engine.lock();
+}
+
+beings.Actor.prototype.endTurn = function() {
+	this.acting = false;
+	this.game.engine.unlock();
+}
+
+beings.Actor.prototype.move = function(dir) {
+
+	var desired = new Phaser.Point(this.tx + dir.x, this.ty + dir.y);
+	//console.log(this.game.map.getTiles(desired.x, desired.y))
+
+	if (this.game.map.isSolid(desired.x, desired.y))
+		return;
+
+	this.tx += dir.x;
+	this.ty += dir.y;
+
+	this.endTurn();
 }
