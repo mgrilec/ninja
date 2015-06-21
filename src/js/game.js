@@ -24,6 +24,8 @@
       this.player = this.add.existing(new beings.Actor(this.game, "player", 0, 0, beings.control.Player));
       this.game.scheduler.add(this.player, true);
 
+      this.game.map.refreshShadow(this.player);
+
       // start engine
       this.game.engine.start();
 

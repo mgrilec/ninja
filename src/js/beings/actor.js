@@ -25,6 +25,9 @@ beings.Actor = function(game, name, x, y, control) {
 
 	// control
 	this.control = new control(this);
+
+	// vision
+	this.vision = 5;
 };
 
 beings.Actor.prototype = Object.create(Phaser.Sprite.prototype);

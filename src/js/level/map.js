@@ -60,7 +60,7 @@ level.Map.prototype.refreshShadow = function(actor) {
 	this.tilemap.fill(this.shadowIndex, 0, 0, this.tilemap.width, this.tilemap.height, "fov");
 
 	// run compute
-	this.fov.compute(actor.worldX, actor.worldY, 10, function(x, y, r, visibility) {
+	this.fov.compute(actor.worldX, actor.worldY, actor.vision, function(x, y, r, visibility) {
 		_this.tilemap.putTile(null, x, y, "fov");
 	});
 }
