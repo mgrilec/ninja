@@ -21,6 +21,7 @@
 
       // load tiles
       this.load.image('environment', 'assets/tiles/environment.png');
+      this.load.image('shadow', 'assets/tiles/shadow.png');
       this.load.atlasXML('characters', 'assets/tiles/characters.png', 'assets/tiles/characters.xml');
 
       // load maps

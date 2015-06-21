@@ -3,8 +3,8 @@ var beings = beings || {};
 beings.Actor = function(game, name, x, y, control) {
 	Phaser.Sprite.call(this, game, x * game.tileSize, y * game.tileSize, 'characters', 'base.male.0');
 
-	this.tx = x;
-	this.ty = y;
+	this.worldX = x;
+	this.worldY = y;
 	this.parts = {};
 
 	// bottoms
@@ -25,7 +25,6 @@ beings.Actor = function(game, name, x, y, control) {
 
 	// control
 	this.control = new control(this);
-	console.log(this);
 };
 
 beings.Actor.prototype = Object.create(Phaser.Sprite.prototype);
@@ -34,8 +33,8 @@ beings.Actor.prototype.constructor = beings.Actor;
 beings.Actor.prototype.update = function() {
 	var _this = this;
 
-	this.x = this.tx * this.game.tileSize;
-	this.y = this.ty * this.game.tileSize;
+	this.x = this.worldX * this.game.tileSize;
+	this.y = this.worldY * this.game.tileSize;
 
 	this.control.update();
 };
@@ -53,14 +52,13 @@ beings.Actor.prototype.endTurn = function() {
 
 beings.Actor.prototype.move = function(dir) {
 
-	var desired = new Phaser.Point(this.tx + dir.x, this.ty + dir.y);
-	//console.log(this.game.map.getTiles(desired.x, desired.y))
+	var desired = new Phaser.Point(this.worldX + dir.x, this.worldY + dir.y);
 
 	if (this.game.map.isSolid(desired.x, desired.y))
 		return;
 
-	this.tx += dir.x;
-	this.ty += dir.y;
+	this.worldX = desired.x;
+	this.worldY = desired.y;
 
 	this.endTurn();
 }
